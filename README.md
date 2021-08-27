@@ -1,4 +1,4 @@
-# nuxtjs-project
+# Recipe-next nuxtjs-project
 
 ## Build Setup
 

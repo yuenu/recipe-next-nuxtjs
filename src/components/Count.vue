@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div>Count: {{count}}</div>
+    <div>Count: {{ count }}</div>
     <button @click="increment">increment</button>
   </section>
 </template>
@@ -9,18 +9,17 @@
 import { defineComponent, ref } from '@vue/composition-api'
 
 export default defineComponent({
-
-  setup () {
+  setup() {
     const count = ref(0)
-    
-    function increment () {
+
+    function increment() {
       count.value++
     }
 
     return {
       count,
-      increment
+      increment,
     }
-  }
+  },
 })
 </script>
