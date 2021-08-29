@@ -1,3 +1,7 @@
 <template>
-  <Nuxt />
+  <div id="app">
+    <TheHeader />
+    <Nuxt />
+    <TheFooter />
+  </div>
 </template>

@@ -1,0 +1,48 @@
+// header-top
+.header {
+  width: 100%;
+  min-height: 100px;
+
+  &__container {
+    max-width: 1330px;
+    margin: 0 auto;
+  }
+
+  &__top {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position:relative;
+  }
+
+  &__brand {
+    position:absolute;
+    top:55%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__phone {
+   &__link {
+     display:flex;
+     align-items: center;
+     gap:12px;
+   }
+
+   &-text {
+     font-size:20px;
+   }
+  }
+
+  &__address {
+    display:flex;
+    gap:12px;
+    align-items: center;
+
+    &-text {
+      font-size:20px;
+    }
+  }
+}

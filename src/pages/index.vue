@@ -1,12 +1,17 @@
 <template>
   <main>
-    <Tutorial />
     <Count />
+    <Icon :name="'mail'" :color="'yellow'" />
   </main>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@nuxtjs/composition-api'
+import Icon from '@/utils/icons/index.vue'
 
-export default Vue.extend({})
+export default defineComponent({
+  components: {
+    Icon,
+  },
+})
 </script>

@@ -1,1 +1,6 @@
-@import './base/base.scss'
+@import './base/base.scss';
+
+@import './abstracts/variables.scss';
+
+@import './components/organisms/header.scss';
+@import './components/organisms/footer.scss';
