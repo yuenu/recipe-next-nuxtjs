@@ -1,3 +1,5 @@
+import i18n from './src/plugins/i18n'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -27,6 +29,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '@/plugins/i18n.ts' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,6 +47,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    ['@nuxtjs/i18n', i18n]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

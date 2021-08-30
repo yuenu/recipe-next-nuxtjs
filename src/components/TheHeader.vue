@@ -26,16 +26,30 @@
       </div>
       <div class="header__bottom">
         <div class="header__lang">
-          <button class="header__lang-cn">簡</button>
-          <button class="header__lang-tw">繁</button>
-          <button class="header__lang-en">EN</button>
+          <nuxt-link class="header__lang-cn" :to="switchLocalePath('cn')"
+            >簡</nuxt-link
+          >
+          <nuxt-link class="header__lang-tw" :to="switchLocalePath('tw')"
+            >繁</nuxt-link
+          >
+          <nuxt-link class="header__lang-en" :to="switchLocalePath('en')"
+            >EN</nuxt-link
+          >
         </div>
         <nav ref="navEl" class="header__nav">
           <ul class="header__nav-list">
-            <li><NuxtLink to="/">Home</NuxtLink></li>
-            <li><NuxtLink to="#about">About</NuxtLink></li>
-            <li><NuxtLink to="#meals">Meals</NuxtLink></li>
-            <li><NuxtLink to="#contact">Contact</NuxtLink></li>
+            <li>
+              <NuxtLink to="/">{{ $t('navigation.home') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="#about">{{ $t('navigation.about') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="#meals">{{ $t('navigation.meals') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="#contact">{{ $t('navigation.contact') }}</NuxtLink>
+            </li>
           </ul>
         </nav>
         <div class="header__social">
