@@ -21,7 +21,7 @@
           <div class="header__address-icon">
             <Icon :name="'map-pin'" :color="'#FFDC80'" />
           </div>
-          <span class="header__address-text">台灣大道</span>
+          <span class="header__address-text">{{ $t('header.location') }}</span>
         </div>
       </div>
       <div class="header__bottom">

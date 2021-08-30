@@ -1,0 +1,14 @@
+.main {
+  width:100%;
+
+  &__container {
+    width:100%;
+    max-width:$deskop-size;
+    margin:20px auto;
+    padding:0 10px;
+  }
+}
+
+.text-dark {
+  color:#000000;
+}

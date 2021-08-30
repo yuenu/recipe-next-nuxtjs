@@ -1,4 +1,4 @@
-import i18n from './src/plugins/i18n'
+import i18n from './src/plugins/i18n.js'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -29,7 +29,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/i18n.ts' }
+    { src: '@/plugins/i18n.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
