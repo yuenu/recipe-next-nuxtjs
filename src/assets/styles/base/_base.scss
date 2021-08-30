@@ -25,4 +25,14 @@ a {
 ul,
 li {
   list-style: none;
+  padding:0;
+}
+
+.icon svg {
+  width:24px;
+  height:24px;
+}
+
+.count {
+  height:200vh;
 }

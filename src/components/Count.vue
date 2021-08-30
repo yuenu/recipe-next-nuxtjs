@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="count">
     <div>Count: {{ count }}</div>
     <button @click="increment">increment</button>
   </section>

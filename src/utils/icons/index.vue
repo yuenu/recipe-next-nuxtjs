@@ -18,13 +18,12 @@ export default defineComponent({
     },
     color: {
       type: String,
-      default: 'black',
+      default: '#ffffff',
       required: false,
     },
   },
   setup(props) {
     const iconEl = ref<HTMLDivElement>()
-    // const style = ref('')
     const iconName = ref('')
     const isGetResource = ref(false)
 
@@ -39,8 +38,8 @@ export default defineComponent({
 
     watchEffect(() => {
       if (isGetResource.value && iconEl.value) {
-        const color = iconEl.value.children[0] as HTMLOrSVGImageElement
-        color.style.fill = props.color
+        const svgEl = iconEl.value.children[0] as HTMLOrSVGImageElement
+        svgEl.style.fill = props.color
       }
     })
     return {
