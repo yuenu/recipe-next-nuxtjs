@@ -18,7 +18,6 @@ export default defineComponent({
     },
     color: {
       type: String,
-      default: '#ffffff',
       required: false,
     },
   },
@@ -37,7 +36,7 @@ export default defineComponent({
     })
 
     watchEffect(() => {
-      if (isGetResource.value && iconEl.value) {
+      if (isGetResource.value && iconEl.value && props.color) {
         const svgEl = iconEl.value.children[0] as HTMLOrSVGImageElement
         svgEl.style.fill = props.color
       }

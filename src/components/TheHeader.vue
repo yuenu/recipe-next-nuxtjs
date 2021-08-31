@@ -53,12 +53,15 @@
           </ul>
         </nav>
         <div class="header__social">
-          <Icon
-            v-for="social in socials"
-            :key="social.id"
-            :name="social.name"
-            :color="social.color"
-          />
+          <a href="https://www.facebook.com/">
+            <Icon :name="'facebook'" />
+          </a>
+          <a href="https://twitter.com/">
+            <Icon :name="'twitter'" />
+          </a>
+          <a href="https://www.instagram.com/">
+            <Icon :name="'instagram'" />
+          </a>
         </div>
         <div class="header__control">
           <Icon :name="'search'" />
@@ -72,24 +75,7 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from '@nuxtjs/composition-api'
 
-import Icon from '@/utils/icons/index.vue'
-const socials = [
-  {
-    id: 1,
-    name: 'facebook',
-    color: '#4361ee',
-  },
-  {
-    id: 2,
-    name: 'twitter',
-    color: '#1877f2',
-  },
-  {
-    id: 3,
-    name: 'instagram',
-    color: '#F77737',
-  },
-]
+import Icon from '@/utils/icons.vue'
 
 export default defineComponent({
   components: {
@@ -117,7 +103,6 @@ export default defineComponent({
     })
 
     return {
-      socials,
       navEl,
     }
   },

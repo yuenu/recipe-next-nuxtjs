@@ -37,7 +37,5 @@
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
 
-// import Icon from '@/utils/icons/index.vue'
-
 export default defineComponent({})
 </script>

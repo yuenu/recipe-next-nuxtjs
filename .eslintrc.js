@@ -15,6 +15,7 @@ module.exports = {
     indent: ['error', 2],
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
-    'vue/no-v-html': 'off'
+    'vue/no-v-html': 'off',
+    'vue/require-default-prop': 'off'
   },
 }
