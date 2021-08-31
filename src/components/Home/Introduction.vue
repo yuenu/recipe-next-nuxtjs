@@ -22,36 +22,36 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Vue, Component } from 'nuxt-property-decorator'
 import Icon from '@/utils/icons.vue'
 
-const stars = [
-  {
-    id: 1,
-    color: '#FBC753',
-  },
-  {
-    id: 2,
-    color: '#FBC753',
-  },
-  {
-    id: 3,
-    color: '#FBC753',
-  },
-  {
-    id: 4,
-  },
-  {
-    id: 5,
-  },
-]
-
-export default defineComponent({
+@Component<Introduction>({
   components: {
     Icon,
   },
-  setup() {
-    return { stars }
-  },
 })
+export default class Introduction extends Vue {
+  get stars() {
+    return [
+      {
+        id: 1,
+        color: '#FBC753',
+      },
+      {
+        id: 2,
+        color: '#FBC753',
+      },
+      {
+        id: 3,
+        color: '#FBC753',
+      },
+      {
+        id: 4,
+      },
+      {
+        id: 5,
+      },
+    ]
+  }
+}
 </script>

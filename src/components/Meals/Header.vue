@@ -7,13 +7,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@nuxtjs/composition-api'
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({
-  setup() {
-    const bannerText = ref('bannerText')
+@Component<MealsHeader>({})
+export default class MealsHeader extends Vue {
+  bannerText = 'bannerText'
+}
 
-    return { bannerText }
-  },
-})
+// export default defineComponent({
+//   setup() {
+//     const bannerText = ref('bannerText')
+
+//     return { bannerText }
+//   },
+// })
 </script>

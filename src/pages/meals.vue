@@ -10,15 +10,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
-
+import { Component, Vue } from 'nuxt-property-decorator'
 import Header from '@/components/Meals/Header.vue'
 import Sidebar from '@/components/Meals/Sidebar.vue'
 
-export default defineComponent({
+@Component({
   components: {
     Header,
     Sidebar,
   },
 })
+export default class MealsPage extends Vue {}
 </script>

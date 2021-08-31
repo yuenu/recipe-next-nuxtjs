@@ -16,6 +16,8 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
     'vue/no-v-html': 'off',
-    'vue/require-default-prop': 'off'
+    'vue/require-default-prop': 'off',
+    'import/no-mutable-exports': 'off',
+    'no-use-before-define': 0
   },
 }

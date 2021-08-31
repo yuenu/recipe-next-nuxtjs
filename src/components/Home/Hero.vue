@@ -13,3 +13,9 @@
     </div>
   </section>
 </template>
+
+<script lang="ts">
+import { Vue } from 'nuxt-property-decorator'
+
+export default class Hero extends Vue {}
+</script>

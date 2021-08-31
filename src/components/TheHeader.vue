@@ -73,38 +73,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from '@nuxtjs/composition-api'
-
+import { Vue, Component, Ref } from 'nuxt-property-decorator'
 import Icon from '@/utils/icons.vue'
 
-export default defineComponent({
+@Component<Hero>({
   components: {
     Icon,
   },
-  setup() {
-    const navEl = ref<HTMLElement>()
-    const requestAnimationFrameTimer = ref(0)
-    function toggleHeaderSticky() {
-      if (navEl.value) {
-        if (window.pageYOffset > 70) {
-          navEl.value.classList.add('sticky')
-        } else {
-          navEl.value.classList.remove('sticky')
-        }
-      }
-    }
-
-    onMounted(() => {
-      window.addEventListener('scroll', () => {
-        cancelAnimationFrame(requestAnimationFrameTimer.value)
-        requestAnimationFrameTimer.value =
-          requestAnimationFrame(toggleHeaderSticky)
-      })
+  mounted() {
+    window.addEventListener('scroll', () => {
+      cancelAnimationFrame(this.requestAnimationFrameTimer)
+      this.requestAnimationFrameTimer = requestAnimationFrame(
+        this.toggleHeaderSticky
+      )
     })
-
-    return {
-      navEl,
-    }
   },
 })
+export default class Hero extends Vue {
+  @Ref() navEl!: HTMLElement
+
+  requestAnimationFrameTimer = 0
+
+  toggleHeaderSticky() {
+    if (this.navEl) {
+      if (window.pageYOffset > 70) {
+        this.navEl.classList.add('sticky')
+      } else {
+        this.navEl.classList.remove('sticky')
+      }
+    }
+  }
+}
 </script>

@@ -44,12 +44,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Vue, Component } from 'nuxt-property-decorator'
+
 import Icon from '@/utils/icons.vue'
 
-export default defineComponent({
+@Component<Feature>({
   components: {
     Icon,
   },
 })
+export default class Feature extends Vue {}
 </script>

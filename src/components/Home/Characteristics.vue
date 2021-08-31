@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({})
+export default class Characteristics extends Vue {}
 </script>

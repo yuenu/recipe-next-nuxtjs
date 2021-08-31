@@ -73,23 +73,21 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from '@nuxtjs/composition-api'
+import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Icon from '@/utils/icons.vue'
 import { Categories } from '@/types/index'
 
-export default defineComponent({
+@Component<Contact>({
   components: {
     Icon,
   },
-  props: {
-    categories: {
-      type: Array as PropType<Categories[]>,
-      require: true,
-    },
-  },
-  setup(props) {
-    const getCategories = computed(() => props.categories)
-    return { getCategories }
-  },
 })
+export default class Contact extends Vue {
+  @Prop()
+  categories!: Categories[]
+
+  get getCategories() {
+    return this.categories
+  }
+}
 </script>
