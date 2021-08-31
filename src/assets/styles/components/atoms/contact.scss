@@ -35,7 +35,7 @@
   }
 
 
-  &__content:nth-child(2) {
+  &__card:nth-child(2) &__content {
     display:flex;
     flex-direction: column;
     gap:10px;
@@ -52,5 +52,13 @@
     gap: 20px;
   }
 
-  
+  &__card:nth-child(3) &__content {
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+
+  &__ingredient {
+    width:130px;
+  }
 }

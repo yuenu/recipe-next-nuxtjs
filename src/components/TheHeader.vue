@@ -45,7 +45,7 @@
               <NuxtLink to="#about">{{ $t('navigation.about') }}</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="#meals">{{ $t('navigation.meals') }}</NuxtLink>
+              <NuxtLink to="/meals">{{ $t('navigation.meals') }}</NuxtLink>
             </li>
             <li>
               <NuxtLink to="#contact">{{ $t('navigation.contact') }}</NuxtLink>

@@ -59,18 +59,37 @@
     </div>
     <div class="contact__card">
       <h2 class="contact__title">INSTAGRAM</h2>
-      <div class="contact__content"></div>
+      <div class="contact__content">
+        <div
+          v-for="category in getCategories"
+          :key="category.id"
+          class="contact__ingredient"
+        >
+          <img :src="category.strCategoryThumb" :alt="category.strCategory" />
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { computed, defineComponent, PropType } from '@nuxtjs/composition-api'
 import Icon from '@/utils/icons.vue'
+import { Categories } from '@/types/index'
 
 export default defineComponent({
   components: {
     Icon,
+  },
+  props: {
+    categories: {
+      type: Array as PropType<Categories[]>,
+      require: true,
+    },
+  },
+  setup(props) {
+    const getCategories = computed(() => props.categories)
+    return { getCategories }
   },
 })
 </script>
