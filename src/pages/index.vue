@@ -5,7 +5,7 @@
       <Intro />
       <Feature />
       <Characteristics />
-      <Contact :categories="categories" />
+      <Contact :categories="getCategories" />
     </div>
   </main>
 </template>
@@ -13,14 +13,16 @@
 <script lang="ts">
 // import axios from 'axios'
 
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, getModule } from 'nuxt-property-decorator'
 import Hero from '@/components/Home/Hero.vue'
 import Intro from '@/components/Home/Introduction.vue'
 import Characteristics from '@/components/Home/Characteristics.vue'
 import Feature from '@/components/Home/Feature.vue'
-import Contact from '@/components/Home/Contact.vue'
+import Contact from '@/components/Contact.vue'
 
-@Component({
+import App from '@/store/app'
+
+@Component<IndexPage>({
   components: {
     Hero,
     Intro,
@@ -28,8 +30,29 @@ import Contact from '@/components/Home/Contact.vue'
     Feature,
     Contact,
   },
+  created() {
+    this.$store.registerModule('myApp', App)
+  },
+  mounted() {
+    this.setup()
+  },
+  beforeDestroy() {
+    this.$store.unregisterModule('myApp')
+  },
 })
-export default class IndexPage extends Vue {}
+export default class IndexPage extends Vue {
+  get storeModule() {
+    return getModule(App, this.$store)
+  }
+
+  get getCategories() {
+    return this.storeModule.categories
+  }
+
+  async setup() {
+    await this.storeModule.getAllCategories()
+  }
+}
 //   setup() {
 //     const categories = ref([])
 

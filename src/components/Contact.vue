@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="contact__card">
-      <h2 class="contact__title">INSTAGRAM</h2>
+      <h2 class="contact__title">INSTAGRAMS</h2>
       <div class="contact__content">
         <div
           v-for="category in getCategories"
@@ -83,8 +83,7 @@ import { Categories } from '@/types/index'
   },
 })
 export default class Contact extends Vue {
-  @Prop()
-  categories!: Categories[]
+  @Prop({ type: Array, required: true }) categories!: Categories[]
 
   get getCategories() {
     return this.categories

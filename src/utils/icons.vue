@@ -7,8 +7,9 @@ import { Vue, Component, Ref, Prop, Watch } from 'nuxt-property-decorator'
 
 @Component<Icons>({
   mounted() {
+    this.iconType = this.type ? this.type + '/' : ''
     try {
-      this.iconName = require(`@/assets/icons/${this.name}.svg?raw`)
+      this.iconName = require(`@/assets/icons/${this.iconType}${this.name}.svg?raw`)
       this.isGetResource = true
     } catch (_e) {
       this.isGetResource = false
@@ -18,8 +19,10 @@ import { Vue, Component, Ref, Prop, Watch } from 'nuxt-property-decorator'
 export default class Icons extends Vue {
   @Ref() iconEl!: HTMLDivElement
 
-  @Prop() name!: string
-  @Prop() color!: string
+  iconType = ''
+  @Prop({ type: String, required: true }) name!: string
+  @Prop({ type: String, required: false }) color!: string
+  @Prop({ type: String, required: false }) type!: string
 
   iconName = ''
   isGetResource = false

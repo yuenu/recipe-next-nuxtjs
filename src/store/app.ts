@@ -1,34 +1,49 @@
 import { Module, Action, Mutation, VuexModule } from 'vuex-module-decorators'
+import { fetchAllCategories } from '@/utils/api'
+import { Categories, Meal } from '@/types'
 
 @Module({
-  name: 'counter',
+  name: 'myApp',
   stateFactory: true,
   namespaced: true,
 })
-export default class Counter extends VuexModule {
-  public counter: number = 0
-
-  get getCounter() {
-    return this.counter
-  }
+export default class App extends VuexModule {
+  meals: Meal[] = []
+  categories: Categories[] = []
 
   @Mutation
-  INCREMENT_COUNTER() {
-    this.counter++
-  }
-
-  @Mutation
-  DECR_COUNTER() {
-    this.counter--
+  STORE_MEALS(data: Categories[]) {
+    this.categories = data
   }
 
   @Action
-  increment() {
-    this.context.commit('INCREMENT_COUNTER')
+  async getAllCategories() {
+    if (this.categories.length === 0) {
+      const { categories } = await fetchAllCategories()
+      this.STORE_MEALS(categories)
+    }
   }
+  // get getCounter() {
+  //   return this.counter
+  // }
 
-  @Action
-  decr() {
-    this.context.commit('DECR_COUNTER')
-  }
+  // @Mutation
+  // INCREMENT_COUNTER() {
+  //   this.counter++
+  // }
+
+  // @Mutation
+  // DECR_COUNTER() {
+  //   this.counter--
+  // }
+
+  // @Action
+  // increment() {
+  //   this.context.commit('INCREMENT_COUNTER')
+  // }
+
+  // @Action
+  // decr() {
+  //   this.context.commit('DECR_COUNTER')
+  // }
 }

@@ -13,12 +13,4 @@ import { Component, Vue } from 'nuxt-property-decorator'
 export default class MealsHeader extends Vue {
   bannerText = 'bannerText'
 }
-
-// export default defineComponent({
-//   setup() {
-//     const bannerText = ref('bannerText')
-
-//     return { bannerText }
-//   },
-// })
 </script>

@@ -13,7 +13,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "@nuxtjs/i18n"]
   },
