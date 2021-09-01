@@ -1,5 +1,4 @@
 import i18n from './src/plugins/i18n.js'
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -56,5 +55,5 @@ export default {
   build: {
   },
   srcDir: 'src/',
-  transpileDependencies: ['vuex-module-decorators']
+  transpileDependencies: ['vuex-module-decorators'],
 }
